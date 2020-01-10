@@ -31,14 +31,28 @@ describe('Park', function() {
   });
 
   it('should be able to add a dinosaur to its collection', function() {
-    park.addDinosaur("Webpacker");
-    const expected = ["Webpacker"]
+    park.addDinosaur('Webpacker');
+    const expected = ['Webpacker']
     assert.deepStrictEqual(park.dinosaurArray, expected)
   });
 
   it('should be able to remove a dinosaur from its collection', function() {
-    park.removeDinosaur()
+    park.addDinosaur('pidod');
+    park.addDinosaur('mole');
+    park.removeDinosaur('mole');
+    const expected = ['pidod']
+    const actual = park.dinosaurArray;
+    assert.deepStrictEqual(actual, expected)
   });
+
+  // it('should be able to remove a passenger by name', function () {
+  //   taxi.addPassenger('Mike');
+  //   taxi.addPassenger('Lucas');
+  //   taxi.removePassengerByName('Lucas');
+  //   const expected = ['Mike']
+  //   const actual = taxi.passengers;
+  //   assert.deepStrictEqual(actual, expected);
+  // });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
