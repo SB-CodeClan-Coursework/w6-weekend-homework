@@ -4,19 +4,41 @@ const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function() {
 
+  let park;
+
   beforeEach(function () {
+    park = new Park('Eggy Bread Park', 10000000, ['Chicken Rex', 'Bananasaurus', 'Paddy']);
+  });
 
-  })
+  it('should have a name', function() {
+    const actual = park.name;
+    assert.strictEqual(actual, 'Eggy Bread Park');
+  });
 
-  it('should have a name');
+  it('should have a name - getter', function() {
+    const actual = park.getName();
+    assert.strictEqual(actual, 'Eggy Bread Park');
+  });
 
-  it('should have a ticket price');
+  it('should have a ticket price', function() {
+    const actual = park.ticketPrice;
+    assert.strictEqual(actual, 10000000);
+  });
 
-  it('should have a collection of dinosaurs');
+  it('should have a collection of dinosaurs', function() {
+    const expected = [];
+    assert.deepStrictEqual(park.dinosaurArray, expected);
+  });
 
-  it('should be able to add a dinosaur to its collection');
+  it('should be able to add a dinosaur to its collection', function() {
+    park.addDinosaur("Webpacker");
+    const expected = ["Webpacker"]
+    assert.deepStrictEqual(park.dinosaurArray, expected)
+  });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function() {
+    park.removeDinosaur()
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
