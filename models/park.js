@@ -8,10 +8,6 @@ Park.prototype.getName = function () {
   return this.name;
 };
 
-// Park.prototype.getDinosaurArray = function () {
-//   return this.dinosaurArray;
-// };
-
 Park.prototype.addDinosaur = function (newDinosaur) {
   this.dinosaurArray.push(newDinosaur);
 };
@@ -21,10 +17,6 @@ Park.prototype.removeDinosaur = function (dinosaur) {
   this.dinosaur.splice(indexOfDinosaur, 1)
 };
 
-// Taxi.prototype.removePassengerByName = function (passenger) {
-//   const indexOfPassenger = this.passengers.indexOf(passenger);
-//   this.passengers.splice(indexOfPassenger, 1);
-// }
 
 
 

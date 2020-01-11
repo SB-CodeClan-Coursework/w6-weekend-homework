@@ -7,7 +7,11 @@ describe('Park', function() {
   let park;
 
   beforeEach(function () {
-    park = new Park('Eggy Bread Park', 10000000, ['Chicken Rex', 'Bananasaurus', 'Paddy']);
+    park = new Park('Eggy Bread Park', 10000000);
+    dinosaur1 = new Dinosaur('Chicken Rex', 'carnivore', 5)
+    dinosaur2 = new Dinosaur('Bananasaurus', 'herbivore', 100);
+    dinosaur3 = new Dinosaur('Paddy', 'omnivore', 100);
+    dinosaur4 = new Dinosaur('bronchitasaraus', 'flexitarian', 100);
   });
 
   it('should have a name', function() {
@@ -44,15 +48,6 @@ describe('Park', function() {
     const actual = park.dinosaurArray;
     assert.deepStrictEqual(actual, expected)
   });
-
-  // it('should be able to remove a passenger by name', function () {
-  //   taxi.addPassenger('Mike');
-  //   taxi.addPassenger('Lucas');
-  //   taxi.removePassengerByName('Lucas');
-  //   const expected = ['Mike']
-  //   const actual = taxi.passengers;
-  //   assert.deepStrictEqual(actual, expected);
-  // });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
