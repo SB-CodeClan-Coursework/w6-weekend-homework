@@ -1,23 +1,37 @@
-const Park = function (name, ticketPrice, dinosaurArray) {
+const Park = function (name, ticketPrice) {
   this.name = name;
   this.ticketPrice = ticketPrice;
-  this.dinosaurArray = [];
+  this.dinosaurs = [];
 }
 
 Park.prototype.getName = function () {
   return this.name;
 };
 
-Park.prototype.addDinosaur = function (newDinosaur) {
-  this.dinosaurArray.push(newDinosaur);
+Park.prototype.addDinosaur = function (dinosaur) {
+  this.dinosaurs.push(dinosaur);
 };
 
 Park.prototype.removeDinosaur = function (dinosaur) {
-  const indexOfDinosaur = this.dinosaurArray.indexOf(dinosaur);
-  this.dinosaur.splice(indexOfDinosaur, 1)
+  this.dinosaurs.pop(dinosaur)
 };
 
+// Park.prototype.mostPopular = function () {
+//
+// };
 
+Park.prototype.findBySpecies = function (species) {
+  let result = [];
+  result = this.dinosaurs.filter(dinosaur => species === dinosaur.species);
+  return result;
+};
 
+Park.prototype.totalVisitorsPerDay = function () {
+  let total = 0;
+  this.dinosaurs.forEach((dinosaur) => {
+    total += dinosaur.guestsAttractedPerDay;
+  });
+  return total;
+};
 
 module.exports = Park;
