@@ -16,9 +16,9 @@ Park.prototype.removeDinosaur = function (dinosaur) {
   this.dinosaurs.pop(dinosaur)
 };
 
-// Park.prototype.mostPopular = function () {
-//
-// };
+Park.prototype.mostPopular = function () {
+  
+};
 
 Park.prototype.findBySpecies = function (species) {
   let result = [];
